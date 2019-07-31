@@ -52,22 +52,22 @@ def hash_table_insert(hash_table, key, value):
         current_pair.calue = value    
 
 
-# '''
-# Fill this in.
-
-# If you try to remove a value that isn't there, print a warning.
-# '''
 def hash_table_remove(hash_table, key):
-    pass
+    index = hash(key, hash_table.capacity)
+
+    if hash_table.storage[index] is None:
+        print ("Warning: removing non-existent key" + key)
+    has_table.storage[index] = None
 
 
-# '''
-# Fill this in.
-
-# Should return None if the key is not found.
-# '''
 def hash_table_retrieve(hash_table, key):
-    pass
+    index = hash(key, hash_table.capacity)
+
+    if hash_table.storage[index] is None:
+        print ("Warning: no value found for key " + key)
+        return None
+    return hash_table.storage[index]
+    
 
 
 def Testing():
